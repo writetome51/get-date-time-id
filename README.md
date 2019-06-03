@@ -1,5 +1,7 @@
 # getDateTimeID(options?): string
 
+Returns current date and time as a string of digits.
+
 ```ts
 // options:
 {
@@ -7,7 +9,8 @@
     ymdOrder?: 'ymd' | 'ydm' | 'myd' | 'mdy' | 'dym' | 'dmy', // default 'ymd'
     hmsOrder?: 'hms' | 'hsm' | 'msh' | 'mhs' | 'smh' | 'shm', // default 'hms'
     separator?: string, // default '-' 
-    separateEach?: boolean // default false
+    separateEach?: boolean, // default false
+    includeTimezoneOffset: boolean, // default true
 }
 ```
 
@@ -18,17 +21,28 @@ Returns default options for `getDateTimeID()`.
 
 ## Examples
 ```ts
-getDateTimeID();
-// --> '190522-142210'
+getDateTimeID(); // Say date-time is May 22,2019, 2:22:10pm, in a time zone 2 hours ahead of GMT.
+// --> '190522-142210-GMT+2'
+
+getDateTimeID(); // Say date-time is May 22,2019, 2:22:10pm, in time zone 6 hours behind GMT.
+// --> '190522-142210-GMT-6'
+
+getDateTimeID({includeFullYear: true});
+// --> '20190522-142210-GMT-6'
 
 getDateTimeID({ymdOrder: 'mdy'});
-// --> '052219-142210'
+// --> '052219-142210-GMT-6'
 
 getDateTimeID({ymdOrder: 'mdy', separator: ''});
-// --> '052219142210'
+// --> '052219142210GMT-6'
 
 getDateTimeID({ymdOrder: 'mdy', separateEach: true});
-// --> '05-22-19-14-22-10'
+// --> '05-22-19-14-22-10-GMT-6'
+
+getDateTimeID({ymdOrder: 'mdy', hmsOrder: 'smh', 
+    separateEach: true, includeTimezoneOffset: false}
+);
+// --> '05-22-19-10-22-14'
 ```
 
 

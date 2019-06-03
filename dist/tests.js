@@ -9,7 +9,8 @@ res = index_1.getDateTimeID({ ymdOrder: 'mdy', hmsOrder: 'smh', separateEach: tr
 console.log(res);
 res = index_1.getDateTimeID({
     ymdOrder: 'mdy',
-    separateEach: true
+    separateEach: true,
+    includeTimezoneOffset: false
 });
 console.log(res);
 res = index_1.getDateTimeID({
@@ -20,6 +21,6 @@ res = index_1.getDateTimeID({
 console.log(res);
 res = index_1.getDateTimeID({
     includeFullYear: true,
-    separator: ''
+    includeTimezoneOffset: false
 });
 console.log(res);

@@ -4,5 +4,6 @@ import { DateFormatOrder, TimeFormatOrder } from 'types-date-format-order-time-f
 
 export interface getDateTimeIDOptions extends YearSeparatorOptions {
 	ymdOrder?: DateFormatOrder,
-	hmsOrder?: TimeFormatOrder
+	hmsOrder?: TimeFormatOrder,
+	includeTimezoneOffset?: boolean
 }

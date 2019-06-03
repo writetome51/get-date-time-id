@@ -1,4 +1,4 @@
-import { getDateTimeID } from './index';
+import { getDateTimeID} from './index';
 
 
 let res = getDateTimeID();
@@ -16,7 +16,8 @@ console.log(res);
 
 res = getDateTimeID({
 	ymdOrder: 'mdy',
-	separateEach: true
+	separateEach: true,
+	includeTimezoneOffset:false
 });
 console.log(res);
 
@@ -31,6 +32,6 @@ console.log(res);
 
 res = getDateTimeID({
 	includeFullYear: true,
-	separator: ''
+	includeTimezoneOffset:false
 });
 console.log(res);
