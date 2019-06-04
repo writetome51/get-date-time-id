@@ -22,22 +22,22 @@ Returns default options for `getDateTimeID()`.
 ## Examples
 ```ts
 getDateTimeID(); // Say date-time is May 22,2019, 2:22:10pm, in a time zone 2 hours ahead of GMT.
-// --> '190522-142210-GMT+2'
+// --> '190522-142210+02'
 
 getDateTimeID(); // Say date-time is May 22,2019, 2:22:10pm, in time zone 6 hours behind GMT.
-// --> '190522-142210-GMT-6'
+// --> '190522-142210-06'
 
 getDateTimeID({includeFullYear: true});
-// --> '20190522-142210-GMT-6'
+// --> '20190522-142210-06'
 
 getDateTimeID({ymdOrder: 'mdy'});
-// --> '052219-142210-GMT-6'
+// --> '052219-142210-06'
 
 getDateTimeID({ymdOrder: 'mdy', separator: ''});
-// --> '052219142210GMT-6'
+// --> '052219142210-06'
 
 getDateTimeID({ymdOrder: 'mdy', separateEach: true});
-// --> '05-22-19-14-22-10-GMT-6'
+// --> '05-22-19-14-22-10-06'
 
 getDateTimeID({ymdOrder: 'mdy', hmsOrder: 'smh', 
     separateEach: true, includeTimezoneOffset: false}
