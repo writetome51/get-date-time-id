@@ -8,7 +8,7 @@ import { getDateTimeIDOptions } from './privy';
 
 
 // Returns current date and time as string of digits.
-// Default format is yymmdd-hhmmss-TZOffset, i.e '190522-142210-GMT+2'  for May 22, 2019, 2:22:10pm,
+// Default format is yymmdd-hhmmss-TZOffset, i.e '190522-142210+2'  for May 22, 2019, 2:22:10pm,
 // in a time zone 2 hours ahead of GMT.
 //
 // Default `options`:  {
